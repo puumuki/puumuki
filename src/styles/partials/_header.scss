@@ -1,0 +1,116 @@
+header {
+  
+  display: flex;
+  
+  h1 {
+    display: inline-block;
+  }
+
+  font-family: $font-family-header;
+  background-color: $primary-color;
+
+  @include after( $md-brakepoint ) {
+    @include max-width;
+  }
+
+  @extend .padded-container;
+  padding-left: 0;
+  padding-right: 0;
+
+  .icon-holder {
+    margin-right: 20px;
+  }
+
+  a { 
+    font-size: $base-font-size * 2.5;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 8pt;
+    color: $white; 
+  }  
+
+  .icon-search {
+    margin-left: auto;
+    margin-right: 0;    
+  }
+
+  .search-element {
+    
+    input {
+      font-size: 18px;
+      border-radius: 0; 
+      border: 0;
+      padding: 1em 0;      
+      width: 0;
+    }
+    
+    &--close {
+      input {
+        animation-duration: 0.6s;
+        animation-name: slide-close;
+        animation-direction: normal;
+        animation-fill-mode: forwards;
+      }
+    }
+
+    &--open {
+      input {   
+        padding: 1em 1em;      
+        animation-duration: 0.6s;
+        animation-name: slide-open;
+        animation-fill-mode: forwards;
+        animation-direction: normal;
+      }
+    }//End of open
+
+  }//End of search-element
+
+  //On mobile devive
+  @include upto( $sm-brakepoint ) {
+    flex-wrap: wrap;
+    justify-content: center;;
+
+    h1 {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    a { font-size: 30px; }
+
+    .icon-search {
+      display: none;
+    }
+
+    .search-element {
+      width: auto;
+      input { 
+        width: 200px;
+        padding: 0.5em 1em; 
+        border-radius: 1.5em; 
+      }
+    }
+  }    
+
+}
+  
+@keyframes slide-close {
+  0% {
+    width: 200px;
+    border-radius: 1.5em;           
+  }
+  100% {    
+    width: 0px;
+    border-radius: 0.0em;       
+  }
+}
+
+@keyframes slide-open {
+  0% {
+    width: 0px; 
+    border-radius: 0.0em;
+  }
+  100% {    
+    width: 200px;    
+    border-radius: 1.5em;  
+  }
+}

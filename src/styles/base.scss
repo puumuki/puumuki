@@ -1,0 +1,50 @@
+
+html, body {  
+  display: flex;
+  justify-content: center;  
+}
+
+.padded-container {
+  padding: $default-top-margin $side-margin;
+}
+
+@mixin max-width {
+  max-width: $max-width;  
+}
+
+main {
+  @include after( $md-brakepoint ) {
+    @include max-width;
+  }
+}
+
+body {
+  background-color: $primary-color;
+}
+
+
+
+footer {
+
+  color: $white;
+  background-color: $primary-color;
+
+  a {     
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 8pt;
+    color: $white; 
+  }  
+
+  @extend .padded-container;
+
+  @include after( $md-brakepoint ) {
+    @include max-width;
+  }  
+}
+
+nav {
+  padding: 1em $side-margin;
+  background-color: lighten($primary-color, 90%);
+  border-top-left-radius: 2em;
+}

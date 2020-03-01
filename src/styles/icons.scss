@@ -1,0 +1,75 @@
+
+.icon-holder {
+  
+  &--center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  &--inline {
+    display: inline;
+  }
+  
+  &--inline-block {
+    display: inline-block;
+  }   
+  
+  &--rotate {
+    i {
+      display: inline-block;
+      animation-name: spin;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  }
+
+  &--rotate-slow {
+    i {
+      display: inline-block;
+      animation-name: spin;      
+      animation-duration: 64s;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;      
+    }    
+  }
+}
+  
+  
+  $icon-base-size: 8px;
+  
+svg.white {
+  fill: #ffffff;
+  color: white;
+}
+
+svg.small {
+  width: $icon-base-size * 1.5;
+  height: $icon-base-size * 1.5;
+}
+
+svg.medium {
+  width: $icon-base-size * 6;
+  height: $icon-base-size * 6;
+}
+
+svg.large {
+  width: $icon-base-size * 8;
+  height: $icon-base-size * 8;
+}
+
+svg.huge {
+  width: $icon-base-size * 32;
+  height: $icon-base-size * 32;
+}
+
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,13 @@
+//Main
+@import 'variables';
+@import 'reset';
+@import 'typography';
+@import 'mixins';
+@import 'icons';
+@import 'base';
+
+//Partials
+@import './partials/header';
+@import './partials/receipt-list';
+@import './partials/receipt';
+@import './partials/page-not-found-404';

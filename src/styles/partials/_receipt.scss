@@ -1,0 +1,37 @@
+.receipt {
+
+  font-family: $font-family-regular;
+  padding: $side-margin $side-margin;
+  background-color: $white;
+  border-bottom-right-radius: 2em;
+
+  h1 {
+    margin-top: 0.25em;
+    margin-bottom: 0.5em;
+  }
+
+  p {
+    margin: 0.5em 0;
+    line-height: 1.4em;
+  }
+
+  ul {margin: 0; }
+
+  ul > li {
+    text-indent: -5px;
+    margin-left: 10px;
+  }
+
+  ul > li:before {
+    content: "- ";    
+    text-indent: -5px;
+  }
+  
+  img {
+    width: 100%;
+    margin-bottom: $side-margin;
+
+    border: 4px black solid;
+    border-radius: 1em;
+  }
+}
