@@ -62,6 +62,8 @@ exports.createPages = async ({ graphql, actions }) => {
 
 exports.sourceNodes = async ({ actions }) => {
   
+  console.log( "PROCESS", process.env)
+
   const baseUrl = "http://192.168.8.200:8080";
   const staticFolder = path.join( path.dirname( __filename ), 'static' );
      

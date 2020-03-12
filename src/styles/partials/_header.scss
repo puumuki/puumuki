@@ -1,11 +1,15 @@
+$search-element-width: 200px;
+
 header {
   
   display: flex;
-  
+  color: $white;
+
   h1 {
     display: inline-block;
+    color: $white;
   }
-
+  
   font-family: $font-family-header;
   background-color: $primary-color;
 
@@ -91,11 +95,14 @@ header {
     }
   }    
 
+
 }
+
+
   
 @keyframes slide-close {
   0% {
-    width: 200px;
+    width: $search-element-width;
     border-radius: 1.5em;           
   }
   100% {    
@@ -110,7 +117,7 @@ header {
     border-radius: 0.0em;
   }
   100% {    
-    width: 200px;    
+    width: $search-element-width;    
     border-radius: 1.5em;  
   }
 }

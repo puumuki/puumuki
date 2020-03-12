@@ -24,6 +24,7 @@
   "devDependencies": {
     "@iconify/icons-mdi": "^1.0.71",
     "@iconify/react": "^1.1.1",
+    "gh-pages": "^2.2.0",
     "marked": "^0.8.0",
     "node-fetch": "^2.6.0",
     "prettier": "^1.19.1",
@@ -49,5 +50,8 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },  
+  "scripts": {
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   }
 }

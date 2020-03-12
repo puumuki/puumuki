@@ -14,10 +14,27 @@ class Header extends React.Component {
     super(props);
 
     this.state = {
+      angle: 0,
       search: 'search-element'
     }
     
     this.searchInput = React.createRef();
+
+    //Gatsby build throws an error 'window is not defined' if this is not checked like this.
+    if( typeof window === 'object' ) {
+      window.addEventListener("orientationchange", this.orieantationChange);
+    }    
+  }
+
+  orieantationChange = (event) => {
+    if( typeof window === 'object' && window.screen.orientation.angle ) {
+      this.setState({ angle: window.screen.orientation.angle });
+    }
+
+    //Force opens search menu when a element is in portrait position. This only when we are on a mobile sized devices.    
+    if( typeof window === 'object' && window.screen.orientation.angle === 0 && window.screen.width <= 576 ) {
+      //this.setState({ search: 'search-element search-element--open' });      
+    }    
   }
 
   handleSearchKeyUp = (event) => {
@@ -26,9 +43,9 @@ class Header extends React.Component {
 
   onSearchIconClicked = (event) => {   
     if( this.state.search.includes('search-element--open') )  {
-      this.setState({ search: 'search-element search-element--close' }); 
+      //this.setState({ search: 'search-element search-element--close' }); 
     } else {
-      this.setState({ search: 'search-element search-element--open' });
+      //this.setState({ search: 'search-element search-element--open' });
       this.searchInput.current.focus();      
     }    
   }
@@ -47,6 +64,8 @@ class Header extends React.Component {
           <Link to="/" >
             {this.props.siteTitle}
           </Link>           
+
+          <span className="angle">{this.state.angle}</span>
         </h1>
     
         <div className="icon-search icon-holder icon-holder--center"
