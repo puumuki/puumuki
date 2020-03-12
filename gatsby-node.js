@@ -96,13 +96,15 @@ exports.sourceNodes = async ({ actions }) => {
   try {
     const response = await fetch(`${baseUrl}/api/v2/recipes`);
     let receipts = await response.json();
-  
+
+    console.log("IMAGE URL: ", process.env.IMAGE_URL);
+
     receipts = receipts.map(  receipt => {
       
-      const title = receipt.markdown.split('\n')[0];
-      
+      const title = receipt.markdown.split('\n')[0];          
+     
       //Replace file references in the markdown with the reference to static files folder
-      receipt.markdown = receipt.markdown.replace(new RegExp('http://puumuki.game-server.cc/static/img', 'g'), '');
+      receipt.markdown = receipt.markdown.replace(new RegExp('http://puumuki.game-server.cc/static/img', 'g'), process.env.IMAGE_URL );
                                     
       return {
         slug: `/reseptit/${receipt.name}`,
