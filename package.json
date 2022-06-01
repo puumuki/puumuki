@@ -19,7 +19,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^5.2.1",
-    "sharp": "^0.24.1"
+    "sharp": "^0.30.5"
   },
   "devDependencies": {
     "@iconify/icons-mdi": "^1.0.71",
